@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xuan-Zhang Hu - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-light: #ecf0f1;
+            --text-dark: #34495e;
+            --text-dark-light: #555;
+            --bg-light: #f4f4f4;
+            --bg-white: #ffffff;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .resume-container {
+            width: 100%;
+            max-width: 1080px;
+            display: flex;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .left-column {
+            width: 35%;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-photo {
+            width: 130px; /* 調整大小 */
+            height: 140px; /* 調整大小 */
+            border-radius: 50%;
+            margin-bottom: 25px; /* 調整間距 */
+            object-fit: cover; /* 填滿空間並允許裁切 */
+            object-position: top; /* 調整為 top 讓圖片上方優先顯示 */
+            border: 4px solid var(--text-light); /* 增加邊框讓頭像更突出 */
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .section {
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            border-bottom: 2px solid var(--text-light);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .contact-info .icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--text-light);
+        }
+
+        .education-item, .skills-item, .qualities-item {
+            margin-bottom: 15px;
+        }
+        
+        .degree {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .school, .major {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
+        .time {
+            font-style: italic;
+            font-size: 12px;
+            color: #bdc3c7;
+        }
+
+        .skills-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .skills-item .name {
+            font-size: 14px;
+            font-weight: 500;
+            width: 50px;
+            text-align: left;
+        }
+        
+        .skills-dots {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        
+        .skills-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #7f8c8d;
+        }
+        
+        .skills-dot.filled {
+            background-color: var(--accent-color);
+        }
+        
+        .qualities-item {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .qualities-item li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        
+        .qualities-item li:before {
+            content: "■";
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-right: 8px;
+        }
+
+        .right-column {
+            width: 65%;
+            padding: 40px;
+            color: var(--text-dark);
+        }
+        
+        .right-column h2 {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .right-column p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .project-item {
+            margin-bottom: 20px;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .project-details {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        
+        .project-details li {
+            margin-bottom: 5px;
+        }
+        
+        .list-with-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .list-with-icons li:before {
+            content: "■";
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .course-list li {
+            padding: 5px 10px;
+            background-color: var(--bg-light);
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .achievements-list li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        
+        .achievements-list li:before {
+            content: "■";
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .link-style {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .achievements-list a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                flex-direction: column;
+            }
+            .left-column, .right-column {
+                width: 100%;
+                text-align: left;
+            }
+            .contact-info li {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="left-column">
+            <img src="大頭照.jpg" alt="Profile Photo of Xuan-Zhang Hu" class="profile-photo">
+            <div class="name">Xuan-Zhang Hu</div>
+            
+            <div class="section">
+                <div class="section-title">Personal Details</div>
+                <ul class="contact-info">
+                    <li>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <span>Xuan-Zhang Hu</span>
+                    </li>
+                    <li>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>dodo920118@gmail.com</span>
+                    </li>
+                    <li>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.05-.24 1.12.35 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.66 21 3 13.34 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.22 2.45.57 3.57.11.38.02.78-.25 1.05l-2.2 2.2z"/></svg>
+                        <span>0968869295</span>
+                    </li>
+                    <li>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>台北市大安區和平東路一段 106 Taipei</span>
+                    </li>
+                    <li>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V8h14v12zM9 10H7v2h2v-2zm0 4H7v2h2v-2zm4-4h-2v2h2v-2zm0 4h-2v2h2v-2zm4-4h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                        <span>January 18, 2003</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education-item">
+                    <div class="degree">Master's degree</div>
+                    <div class="time">Sep 2025 - Present</div>
+                    <div class="school">National Taiwan University (NTU), Taipei, Taiwan</div>
+                    <div class="major">Computer Science and Information Engineering (CSIE)</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bachelor's degree</div>
+                    <div class="time">Sep 2021 - Jun 2025</div>
+                    <div class="school">National Chung Cheng University (CCU), Chiayi, Taiwan</div>
+                    <div class="major">Computer Science and Information Engineering (CSIE)</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <ul class="skills-item">
+                    <div class="name"><b>Python</b></div>
+                    <div class="skills-dots">
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                    </div>
+                </ul>
+                <ul class="skills-item">
+                    <div class="name"><b>C</b></div>
+                    <div class="skills-dots">
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot"></div>
+                    </div>
+                </ul>
+                <ul class="skills-item">
+                    <div class="name"><b>Linux</b></div>
+                    <div class="skills-dots">
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot filled"></div>
+                        <div class="skills-dot"></div>
+                        <div class="skills-dot"></div>
+                    </div>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Qualities</div>
+                <ul class="qualities-item">
+                    <li><b>Strong Learning Ability</b></li>
+                    <li><b>Teamwork and Cooperation Skills</b></li>
+                    <li><b>Great Problem-solving Skills</b></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="right-column">
+            <h2>Profile</h2>
+            <p>I am a first-year graduate student in <b>CSIE</b> at National Taiwan University (<b>NTU</b>), actively seeking an internship to apply my academic knowledge and gain practical experience. 
+            <br>I am proficient in <b>Python</b>, which has been the primary language for my academic work. I have a strong interest in <b>Financial Technology</b> domain and have taken some foundational courses.</p>
+
+            <h2>Achievements</h2>
+            <ul class="achievements-list">
+                <li><b>2024 IEEE</b> Global Communications Conference (<b>GLOBECOM</b>) <a href="https://ieeexplore.ieee.org/document/10901189" target="_blank">[link]</a></li>
+                <li>National Science and Technology Council (<b>NSTC</b>) Undergraduate Research Project Scholarship </li>
+                <li><b>Finalist</b>, 2023 College and University Information Application Service Innovation Competition (<b>InnoServe</b>)</li>
+            </ul>
+            
+            <h2>Core Course In CSIE</h2>
+            <ul class="course-list">
+                <li>Linear Algebra / <b>A+</b></li>
+                <li>Discrete Mathematics / <b>A</b></li>
+                <li>Data Structures / <b>A</b></li>
+                <li>Algorithms / <b>A</b></li>
+                <li>Operating Systems / <b>A</b></li>
+                <li>Computer Organization / <b>A</b></li>
+            </ul>
+            
+            <h2>Relevant Financial Course</h2>
+            <ul class="course-list">
+                <li>Fundamental Accounting</li>
+                <li>Financial Management</li>
+                <li>Statistical Analysis and Applications</li>
+                <li>Logistics Management</li>
+                <li>Numerical Analysis</li>
+                <li>Principles of Financial Computing</li>
+            </ul>
+            
+            <h2>Project</h2>
+            <div class="project-item">
+                <div class="project-title">Efficient Path Planning for Emergency Medical Services With Stable Connectivity Demands</div>
+                <ul class="project-details">
+                    <li><b>Pyrosm+OSMnx+NetworkX</b>: generate maps and extract geographical information on <b>Linux</b> system</li>
+                    <li><b>Meteosource</b>: obtain and utilize real-time weather information</li>
+                    <li><b>A* algorithm</b>: core algorithm considering signal strength, weather conditions and road congestion</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">Image Processing Service on LINE</div>
+                <ul class="project-details">
+                    <li><b>LINE Messaging API</b>: handle <b>JSON</b>-formatted data (messages and images)</li>
+                    <li><b>OpenCV and Pillow</b>: image processing libraries</li>
+                    <li><b>Flask</b>: create the backend web server</li>
+                    <li><b>ngrok</b>: create public URL for local server, allowing others to send requests</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
