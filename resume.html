@@ -32,7 +32,7 @@
         
         .resume-container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1080px;
             display: flex;
             background-color: var(--bg-white);
             border-radius: var(--border-radius);
@@ -44,7 +44,7 @@
             width: 35%;
             background-color: var(--secondary-color);
             color: var(--text-light);
-            padding: 30px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -52,12 +52,13 @@
         }
         
         .profile-photo {
-            width: 120px;
-            height: 120px;
+            width: 130px; /* 調整大小 */
+            height: 140px; /* 調整大小 */
             border-radius: 50%;
-            background-color: var(--accent-color);
-            margin-bottom: 20px;
-            /* Placeholder for the profile photo */
+            margin-bottom: 25px; /* 調整間距 */
+            object-fit: cover; /* 填滿空間並允許裁切 */
+            object-position: top; /* 調整為 top 讓圖片上方優先顯示 */
+            border: 4px solid var(--text-light); /* 增加邊框讓頭像更突出 */
         }
         
         .name {
@@ -171,7 +172,7 @@
 
         .right-column {
             width: 65%;
-            padding: 30px;
+            padding: 40px;
             color: var(--text-dark);
         }
         
@@ -289,7 +290,7 @@
 <body>
     <div class="resume-container">
         <div class="left-column">
-            <div class="profile-photo"></div>
+            <img src="大頭照.jpg" alt="Profile Photo of Xuan-Zhang Hu" class="profile-photo">
             <div class="name">Xuan-Zhang Hu</div>
             
             <div class="section">
@@ -433,4 +434,3 @@
     </div>
 </body>
 </html>
-
