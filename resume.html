@@ -285,6 +285,37 @@
                 justify-content: flex-start;
             }
         }
+        
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: #fff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .resume-container {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+                border-radius: 0;
+                display: block; /* 讓左右欄在列印時可以換行 */
+            }
+            .left-column, .right-column {
+                width: 100%;
+                padding: 20px; /* 稍微減少邊距 */
+            }
+            .left-column {
+                background-color: #34495e !important;
+                color: #ecf0f1 !important;
+                /* 確保背景色在列印時保留 */
+            }
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--text-dark) !important;
+            }
+            .contact-info .icon {
+                fill: var(--text-light) !important;
+            }
+        }
     </style>
 </head>
 <body>
